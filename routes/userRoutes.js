@@ -7,7 +7,9 @@ const {
   resetPassword,
   changePassword,
 } = require("../controllers/authControllers");
-const { me, updateMe } = require("../controllers/userControllers");
+const { me, updateMe,getAllUsers } = require("../controllers/userControllers");
+
+const {addProduct,brand, addBrnadProduct,allproduct,allbrands} = require("../controllers/userProductControllers");
 
 const router = express.Router();
 
@@ -21,5 +23,15 @@ router.patch("/changePassword", protect, changePassword);
 
 router.get("/me", protect, me);
 router.patch("/updateMe", protect, updateMe);
+
+router.get("/getallproduct",allproduct)
+router.get("/getallbrand",allbrands)
+
+
+router.post("/product", addProduct);
+router.post("/brand", brand);
+router.post("/brandProduct", addBrnadProduct);
+
+router.get("/getallusers",getAllUsers)
 
 module.exports = router;

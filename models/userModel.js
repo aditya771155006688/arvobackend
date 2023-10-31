@@ -41,6 +41,8 @@ const userSchema = new mongoose.Schema({
   },
   passwordResetToken: String,
   passwordResetExpires: Date,
+  latitude: Number, // Add latitude field
+  longitude: Number, // Add longitude field
 });
 
 userSchema.pre("save", async function (next) {

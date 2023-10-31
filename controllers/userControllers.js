@@ -31,3 +31,15 @@ exports.updateMe = asyncHandler(async (req, res, next) => {
     user: updatedUser,
   });
 });
+
+exports.getAllUsers=asyncHandler( async(req,res)=>{
+  try {
+    // Retrieve all users from the User model
+    const users = await User.find();
+
+    res.status(200).json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Unable to retrieve users" });
+  }
+})

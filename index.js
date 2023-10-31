@@ -20,6 +20,11 @@ mongoose
 app.use(express.json());
 
 app.use("/api/users", userRouter);
+app.get('/xys', (req,res)=>{
+  res.json({
+    "hi":"hello"
+  })
+})
 
 app.all("*", (req, res, next) => {
   next(new AppError(`can't find ${req.originalUrl} on this server`, 404));

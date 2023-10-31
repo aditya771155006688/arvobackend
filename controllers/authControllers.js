@@ -23,7 +23,10 @@ const signToken = (id, res) => {
 };
 
 exports.signup = asyncHandler(async (req, res, next) => {
-  const { name, email, password, passwordConfirm } = req.body;
+  const { name, email, password, passwordConfirm  ,lat, long} = req.body;
+
+  const latitude=lat?lat:56;
+  const longitude=long? long: 67;
 
   if (!name || !email || !password || !passwordConfirm) {
     return next(
@@ -39,6 +42,8 @@ exports.signup = asyncHandler(async (req, res, next) => {
     email,
     password,
     passwordConfirm,
+    latitude, 
+    longitude
   });
 
   const token = signToken(newUser.id, res);
