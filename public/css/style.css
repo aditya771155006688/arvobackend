@@ -1,0 +1,138 @@
+.certificate {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+.paintingname {
+  font-size: 50px;
+  margin-left: 57px;
+  margin-top: 30px;
+}
+.btnrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 0 0;
+}
+
+.claimnow {
+  margin-right: 57px;
+  width: 250px;
+  height: 50px;
+  border-radius: 20px;
+  background: linear-gradient(black 37%, rgba(245, 153, 56, 0.81) 95%);
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+}
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  /* other styles */
+}
+
+.nav-header {
+  font-size: 37px;
+  padding: 20px 40px 30px 40px;
+  border-radius: 50px;
+}
+
+.nav-header.active {
+  background-color: #dedcdc;
+}
+
+.carousel {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+}
+
+.carousel-images {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.carousel-image {
+  flex: 0 0 auto;
+  width: 90%;
+  scroll-snap-align: start;
+  padding: 20px;
+  height: 600px;
+  margin-top: 30px;
+}
+
+.line-nav {
+  display: flex;
+  justify-content: center;
+}
+.line-nav-line {
+  width: 95%;
+  height: 2px;
+  background-color: #f1f1f1;
+  margin-top: 30px;
+}
+.des-content {
+  padding: 40px 40px 0px 40px;
+  font-size: 2.8rem;
+  text-align: start;
+  color: rgb(123, 121, 121);
+  line-height: 1.5;
+}
+.des-content-bold {
+  padding: 5px 40px 40px 40px;
+  font-size: 2.8rem;
+  color: rgb(123, 121, 121);
+}
+.abt-content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+}
+.abt-art {
+  width: 400px;
+  height: 500px;
+}
+.abt-paras {
+  text-align: center;
+}
+
+.date-nft {
+  padding: 81px 50px 50px 50px;
+  font-size: 1.7rem;
+}
+.date-nft-second {
+  padding: 172px 50px 50px 50px;
+  font-size: 1.7rem;
+}
+.date-nft-third {
+  padding: 172px 50px 50px 50px;
+  font-size: 1.7rem;
+}
+.nft-text {
+  padding: 81px 0px 50px 0px;
+  font-size: 1.7rem;
+}
+.nft-text-second {
+  padding: 106px 0px 50px 0px;
+  font-size: 1.7rem;
+}
+.nft-text-third {
+  padding: 111px 0px 50px 0px;
+  font-size: 1.7rem;
+}
+.clm-end-btn {
+  width: 500px;
+  height: 110px;
+  border-radius: 30px;
+  background: linear-gradient(
+    180deg,
+    #000 36.98%,
+    rgba(246, 153, 57, 0.81) 94.79%
+  );
+  color: white;
+  font-size: 3rem;
+  margin: 20px 0px 50px 0px;
+  font-weight: bold;
+}
