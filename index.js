@@ -99,7 +99,7 @@ app.get("/Liqour/AA00004", (req, res) => {
   
   });
 });
-app.get("/Liqour/AA00005", (req, res) => {
+app.get("/Supplement/AA00005", (req, res) => {
   res.json({
     Image: "https://m.media-amazon.com/images/I/710ZUr0FjeL.jpg",
     Title : "MuscleTech Nitro-Tech Whey Protein",
