@@ -116,7 +116,7 @@ exports.auth= asyncHandler( async(req,res)=>{
     //const inputString = "043FB29A335780x00006AxFFFFFFFF00x00000000";
   
   // Define a regular expression pattern to match the desired substrings
-  const pattern = /([A-F0-9]+)x([A-F0-9]+)x([A-F0-9]+)x([A-F0-9]+)/i;
+  const pattern = /([A-F0-9]+)x([A-F0-9]+)x([A-F0-9]+)/i;
   
   // Use the regular expression to extract substrings
   const matches = uid.match(pattern);
@@ -125,11 +125,11 @@ exports.auth= asyncHandler( async(req,res)=>{
     const Tagid = matches[1];
     const counter = matches[2];
     const openclose = matches[3]=="FFFFFFFF00"?"Used":"Unused";
-    const randomval = matches[4];
+   // const randomval = matches[4];
     const decimalValue = parseInt(counter, 16);
   
 
-    console.log(Tagid, counter, openclose, randomval, decimalValue);
+    console.log(Tagid, counter, openclose, decimalValue);
   
      if(tag==213){
 
