@@ -1,6 +1,7 @@
 const UserProduct = require("../models/productModel"); // Assuming the model is in a separate file
 const asyncHandler = require("express-async-handler");
 const Brand = require("../models/brandModels");
+const Products = require("../models/products")
 // Define a route for inserting a product
 exports.addProduct = asyncHandler(async (req, res) => {
   try {
@@ -104,4 +105,69 @@ exports.addBrnadProduct= asyncHandler( async(req,res)=>{
         console.error(error);
         res.status(500).json({ error: "Unable to add the product to the brand" });
       }
+});
+
+
+exports.auth= asyncHandler( async(req,res)=>{
+ try {
+    const { tag } = req.params;
+    const uid = req.query.uid;
+    console.log(tag ,uid);
+    //const inputString = "043FB29A335780x00006AxFFFFFFFF00x00000000";
+  
+  // Define a regular expression pattern to match the desired substrings
+  const pattern = /([A-F0-9]+)x([A-F0-9]+)x([A-F0-9]+)x([A-F0-9]+)/i;
+  
+  // Use the regular expression to extract substrings
+  const matches = uid.match(pattern);
+  
+    // Extracted values are in matches array
+    const Tagid = matches[1];
+    const counter = matches[2];
+    const openclose = matches[3]=="FFFFFFFF00"?"Used":"Unused";
+    const randomval = matches[4];
+    const decimalValue = parseInt(counter, 16);
+  
+
+    console.log(Tagid, counter, openclose, randomval, decimalValue);
+  
+     if(tag==213){
+
+      const result = await Products.findOneAndUpdate({ "nfcTagId": Tagid },
+        { $inc: { counter: 1 } },
+        { new: true } , // Increment the 'counter' field by 1 // Increment the 'counter' field by 1
+        );
+      
+      //const documents = await result.toArray();;
+      if (decimalValue === result.counter - 2 || decimalValue === result.counter + 10){
+        res.status(201).json({
+          auth:true,
+          condition:openclose,
+          data:result
+        })
+
+      }
+      else{
+        res.status(201).json({
+          auth:false,
+          data: "unauthorized accessing"
+        })
+
+      }
+
+    //  console.log(result.counter)
+     }
+
+    
+  
+      // Add the product to the brand's products array
+  
+      // Save the brand with the new product
+     // const savedBrand = await brand.save();
+  
+      // res.status(201).json(savedBrand);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Unable to extract" });
+    }
 });
