@@ -9,7 +9,7 @@ const {
 } = require("../controllers/authControllers");
 const { me, updateMe,getAllUsers } = require("../controllers/userControllers");
 
-const {addProduct,brand, addBrnadProduct,allproduct,allbrands} = require("../controllers/userProductControllers");
+const {addProduct,brand, addBrnadProduct,allproduct,allbrands,auth} = require("../controllers/userProductControllers");
 
 const router = express.Router();
 
@@ -33,5 +33,7 @@ router.post("/brand", brand);
 router.post("/brandProduct", addBrnadProduct);
 
 router.get("/getallusers",getAllUsers)
+
+router.get('/auth/:tag', auth)
 
 module.exports = router;
