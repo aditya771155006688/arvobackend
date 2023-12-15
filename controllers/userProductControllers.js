@@ -139,21 +139,21 @@ exports.auth= asyncHandler( async(req,res)=>{
         );
       console.log(decimalValue, result.counter);
       //const documents = await result.toArray();;
-      if (decimalValue === result.counter - 20 || decimalValue === result.counter + 50){
+   //   if (decimalValue === result.counter - 20 || decimalValue === result.counter + 50){
         res.status(201).json({
           auth:true,
           condition:openclose,
           data:result
         })
 
-      }
-      else{
-        res.status(201).json({
-          auth:false,
-          data: "unauthorized accessing"
-        })
+      // }
+      // else{
+      //   res.status(201).json({
+      //     auth:false,
+      //     data: "unauthorized accessing"
+      //   })
 
-      }
+      // }
 
     //  console.log(result.counter)
      }
