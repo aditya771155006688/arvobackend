@@ -137,7 +137,7 @@ exports.auth= asyncHandler( async(req,res)=>{
         { $inc: { counter: 1 } },
         { new: true } , // Increment the 'counter' field by 1 // Increment the 'counter' field by 1
         );
-      
+      console.log(decimalValue, result.counter);
       //const documents = await result.toArray();;
       if (decimalValue === result.counter - 2 || decimalValue === result.counter + 10){
         res.status(201).json({
