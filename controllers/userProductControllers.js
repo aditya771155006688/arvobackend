@@ -124,7 +124,7 @@ exports.auth= asyncHandler( async(req,res)=>{
     // Extracted values are in matches array
     const Tagid = matches[1];
     const counter = matches[2];
-    const openclose = matches[3]!="00000000"?"Unused":"Used";
+    const openclose = matches[3]!="00000000"?"Used":"Unused";
    // const randomval = matches[4];
     const decimalValue = parseInt(counter, 16);
   
