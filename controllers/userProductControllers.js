@@ -121,7 +121,7 @@ exports.auth= asyncHandler( async(req,res)=>{
 const uidRegex = /([0-9A-Fa-f]+)(?:x([0-9A-Fa-f]+))?(?:x([0-9A-Fa-f]+))?/;
 
    
-    const match = url.match(uidRegex);
+    const match = uid.match(uidRegex);
 
         var Tagid = match[1];
         var counter = match[2] || null;
